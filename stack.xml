@@ -1,5 +1,5 @@
 <stack>
-  <description brief="reem_robot">reem_robot</description>
+  <description brief="reem_robot">Scripts and configuration files to launch when bringing up REEM. </description>
   <author>Maintained by Adolfo Rodriguez Tsouroukdissian</author>
   <license>Modified BSD</license>  
   <review status="unreviewed" notes=""/>
