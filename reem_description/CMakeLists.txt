@@ -3,7 +3,7 @@ project(reem_description)
 
 find_package(catkin REQUIRED)
 
-catkin_package(CATKIN_DEPENDS xacro)
+catkin_package()
 
 foreach(dir gazebo meshes robots urdf)
     install(DIRECTORY ${dir}/

@@ -1,18 +1,22 @@
 <launch>
+  <!-- Robot model -->
+  <include file="$(find reem_description)/robots/upload_reem.launch"/>
 
-  <!-- Load URDF in param server -->
-  <include file="$(find reem_description)/robots/upload_reem.launch" />
+  <!-- Controller configuration -->
+  <include file="$(find reem_controller_configuration)/launch/default_controllers.launch"/>
 
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="25.0" />
-    <param name="tf_prefix" type="string" value="" />
+    <param name="publish_frequency" type="double" value="50.0"/>
+    <param name="tf_prefix" type="string" value=""/>
   </node>
 
-  <!-- Default controllers -->
-  <include file="$(find reem_controller_configuration)/launch/reem_default_controllers.launch" />
+  <!-- Mobile base -->
+  <include file="$(find pal_mobile_base)/launch/mobile_base.launch"/>
 
-  <!-- Point head action TODO: Move to default controllers! -->
-  <include file="$(find reem_bringup)/launch/point_head_action.launch" />
+  <!-- Joystick controller -->
+  <include file="$(find reem_bringup)/launch/joystick_teleop.launch"/>
 
+  <!-- Pre-recorded motions executor -->
+  <include file="$(find reem_bringup)/launch/play_motion.launch"/>
 </launch>
