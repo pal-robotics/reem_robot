@@ -16,7 +16,7 @@
         <update_rate>15.0</update_rate>
 
         <camera name="${name}">
-          <pose>${hack_baseline} 0 0 0 0 0</pose>  
+          <pose>0 -${hack_baseline} 0 0 0 0</pose>
           <horizontal_fov>${ hfov }</horizontal_fov>
           <image>
             <width>${image_width} </width>
