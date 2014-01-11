@@ -1,0 +1,16 @@
+<launch>
+  <!-- Load default controllers -->
+  <include file="$(find reem_controller_configuration)/launch/default_controllers.launch"/>
+
+  <!-- Robot state publisher -->
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0"/>
+    <param name="tf_prefix" type="string" value=""/>
+  </node>
+
+  <!-- Joystick controller -->
+  <include file="$(find reem_bringup)/launch/joystick_teleop.launch"/>
+
+  <!-- Pre-recorded motions executor -->
+  <include file="$(find reem_bringup)/launch/play_motion.launch"/>
+</launch>
