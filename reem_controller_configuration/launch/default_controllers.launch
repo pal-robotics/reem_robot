@@ -2,16 +2,17 @@
   <!-- Joint state controller -->
   <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
 
+  <!-- Inclinometer sensors controller (uses IMU interfaces) -->
+  <rosparam command="load" file="$(find imu_sensor_controller)/imu_sensor_controller.yaml" />
+
   <!-- Joint trajectory controllers -->
   <rosparam command="load" file="$(find reem_controller_configuration)/config/joint_trajectory_controllers.yaml" />
-
-  <!-- Diff drive controller -->
-  <rosparam command="load" file="$(find reem_controller_configuration)/config/mobile_base_controller.yaml" />
 
   <!-- Controllers that come up started -->
   <node name="default_controllers_spawner"
         pkg="controller_manager" type="spawner" output="screen"
         args="joint_state_controller
+              imu_sensor_controller
               torso_controller
               head_controller
               left_arm_controller
@@ -20,14 +21,4 @@
               right_hand_controller
               mobile_base_controller" />
 
-  <!-- Point head action -->
-  <group ns="head_controller">
-    <node name="point_head_action" pkg="reem_head_action" type="reem_head_action" output="screen" >
-      <rosparam>
-        pan_link:  head_1_link
-        tilt_link: head_2_link
-        success_angle_threshold: 0.01
-      </rosparam>
-    </node>
-  </group>
 </launch>
