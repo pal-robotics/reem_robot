@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2012-2013, PAL Robotics, S.L.
+  Copyright (c) 2012-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -17,12 +17,12 @@
   <!-- The following included files set up definitions of parts of the robot body -->
 
   <!-- Head -->
-  <include filename="$(find reem_description)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/head/head.urdf.xacro" />
 
   <!-- Generic simulator_gazebo plugins -->
-  <include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
   <!-- Materials for visualization -->
-  <include filename="$(find reem_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/materials.urdf.xacro" />
 
   <!-- Fixed structure -->
   <joint name="base_footprint_joint" type="fixed">

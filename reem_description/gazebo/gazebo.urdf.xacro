@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -14,7 +14,7 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
 
   <gazebo>
-    <plugin filename="libros_control_gazebo_plugin.so" name="ros_control">
+    <plugin filename="libgazebo_ros_control.so" name="ros_control">
       <ns></ns>
       <robotSimType>reem_hardware_gazebo/ReemHardwareGazebo</robotSimType>
       <controlPeriod>0.001</controlPeriod>

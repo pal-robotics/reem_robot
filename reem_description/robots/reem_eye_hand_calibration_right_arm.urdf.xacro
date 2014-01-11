@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -17,25 +17,25 @@
   <!-- The following included files set up definitions of parts of the robot body -->
 
   <!-- Base -->
-  <include filename="$(find reem_description)/urdf/base/base.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/base/base.urdf.xacro" />
   <!-- Torso -->
-  <include filename="$(find reem_description)/urdf/torso/torso.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/torso/torso.urdf.xacro" />
   <!-- Head -->
-  <include filename="$(find reem_description)/urdf/head/head.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/head/head.urdf.xacro" />
   <!-- Arm -->
-  <include filename="$(find reem_description)/urdf/arm/arm.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/arm/arm.urdf.xacro" />
   <!-- Hand -->
-  <include filename="$(find reem_description)/urdf/hand/hand.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/hand/hand.urdf.xacro" />
   <!-- Eye-hand calibration chessboard -->
-  <include filename="$(find reem_description)/urdf/eyeHandCalibrationChessBoard.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/eyeHandCalibrationChessBoard.urdf.xacro" />
   <!-- Camera sensors -->
-  <include filename="$(find reem_description)/urdf/sensors/stereo_camera.urdf.xacro" />
-<!--   <include filename="$(find reem_description)/urdf/sensors/back_camera.urdf.xacro" /> -->
+  <xacro:include filename="$(find reem_description)/urdf/sensors/stereo_camera.urdf.xacro" />
+<!--   <xacro:include filename="$(find reem_description)/urdf/sensors/back_camera.urdf.xacro" /> -->
 
   <!-- Generic simulator_gazebo plugins -->
-  <include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
   <!-- Materials for visualization -->
-  <include filename="$(find reem_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/materials.urdf.xacro" />
 
   <!-- Now we can start using the macros included above to define the actual robot -->
   <xacro:reem_base  name="base"/>

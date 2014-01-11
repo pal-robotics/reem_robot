@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -10,7 +10,7 @@
 -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <include filename="$(find reem_description)/urdf/sensors/bumper.gazebo.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/sensors/bumper.gazebo.xacro" />
 
   <xacro:macro name="bumper_reem" params="name parent ros_topic update_rate *origin">
      <joint name="${name}_joint" type="fixed">
@@ -24,13 +24,13 @@
            <mass value="1.0" />
            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01" />
          </inertial>
-         <visual>
-           <origin xyz="-0.02 0 0" rpy="0 0 0" />
+         <!--visual>
+           <origin xyz="0 0 0" rpy="0 0 0" />
            <geometry>
-              <box size="0.001 0.001 0.001"/>
+              <box size="0.01 0.25 0.05"/>
            </geometry>
            <material name="DarkGrey"/>
-         </visual>
+         </visual-->
          <collision>
            <origin xyz="0 0 0" rpy="0 0 0" />
            <geometry>

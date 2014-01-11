@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -11,8 +11,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <include filename="$(find reem_description)/urdf/deg_to_rad.xacro" />
-  <include filename="$(find reem_description)/urdf/torso/torso.transmission.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/deg_to_rad.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/torso/torso.transmission.xacro" />
 
   <!--Constant parameters-->
   <xacro:property name="torso_max_vel"  value="1.0" />
@@ -60,7 +60,7 @@
     </joint>
 
     <!-- extensions -->
-    <xacro:torso_transmission name="${name}_1" reduction="1" />
+    <xacro:torso_transmission name="${name}_1" reduction="1"/>
 
     <!--************************-->
     <!--        TORSO_2         -->
@@ -117,16 +117,16 @@
    </gazebo>
 
     <!-- Torso Front Sonar Ring -->
-   <!-- torso sonar left -->
-   <xacro:range_reem name="${name}_sonar_14" parent="${name}_2" ros_topic="sonar_torso" update_rate="5" maxRange="0.7" minRange="0.01" fov="0.3491" radiation="ultrasound">
-      <origin xyz="0.185 -0.029 0.075" rpy="0.0 0.0 0.0" />
-   </xacro:range_reem> 
-
    <!-- torso sonar right -->
-   <xacro:range_reem name="${name}_sonar_15" parent="${name}_2" ros_topic="sonar_torso" update_rate="5" maxRange="0.7" minRange="0.01" fov="0.3491" radiation="ultrasound">
+   <xacro:range_reem name="${name}_sonar_14" parent="${name}_2" ros_topic="sonar_torso" update_rate="5" maxRange="0.7" minRange="0.01" fov="0.3491" radiation="ultrasound">
       <origin xyz="0.185 -0.029 -0.075" rpy="0.0 0.0 0.0" />
-   </xacro:range_reem>  
-   
+   </xacro:range_reem>
+
+   <!-- torso sonar left -->
+   <xacro:range_reem name="${name}_sonar_15" parent="${name}_2" ros_topic="sonar_torso" update_rate="5" maxRange="0.7" minRange="0.01" fov="0.3491" radiation="ultrasound">
+      <origin xyz="0.185 -0.029 0.075" rpy="0.0 0.0 0.0" />
+   </xacro:range_reem>
+
    <!-- torso sonar back -->
    <xacro:range_reem name="${name}_sonar_13" parent="${name}_2" ros_topic="sonar_torso" update_rate="5" maxRange="0.7" minRange="0.01" fov="0.3491" radiation="ultrasound">
       <origin xyz="-0.2 -0.149 0.0" rpy="0.0 ${180.0*deg_to_rad} 0.0" />

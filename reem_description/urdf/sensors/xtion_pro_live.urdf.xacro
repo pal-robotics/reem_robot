@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2013, PAL Robotics, S.L.
+  Copyright (c) 2013-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -24,16 +24,16 @@
 -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <include filename="$(find reem_description)/urdf/sensors/openni.gazebo.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/sensors/openni.gazebo.xacro" />
 
   <!-- Macro -->
   <xacro:macro name="xtion_pro_live" params="name parent *origin *calibration_origin">
     <joint name="${name}_frame_joint" type="fixed">
       <insert_block name="origin" />
       <parent link="${parent}"/>
-      <child link="${name}_frame"/>
+      <child link="${name}_link"/>
     </joint>
-    <link name="${name}_frame">
+    <link name="${name}_link">
       <inertial>
         <mass value="0.01" />
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -60,7 +60,7 @@
 
     <joint name="${name}_optical_joint" type="fixed">
       <insert_block name="calibration_origin" />
-      <parent link="${name}_frame"/>
+      <parent link="${name}_link"/>
       <child link="${name}_optical_frame"/>
     </joint>
 

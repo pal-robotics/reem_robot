@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2013, PAL Robotics, S.L.
+  Copyright (c) 2013-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -11,8 +11,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- back camera macro uses stingrayf033c_camera macros -->
-  <include filename="$(find reem_description)/urdf/sensors/mvbluefox_back_camera.gazebo.xacro" />
-  <include filename="$(find reem_description)/urdf/sensors/mvbluefox_camera.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/sensors/mvbluefox_back_camera.gazebo.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/sensors/mvbluefox_camera.urdf.xacro" />
 
   <!-- this macro is used for creating wide and narrow double back camera links -->
   <xacro:macro name="reem_back_camera" params="name parent focal_length hfov image_format image_width image_height *origin">

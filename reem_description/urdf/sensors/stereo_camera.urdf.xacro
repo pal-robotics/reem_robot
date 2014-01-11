@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -11,7 +11,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- stereo camera macro uses stingrayf033c_camera macros -->
-  <include filename="$(find reem_description)/urdf/sensors/stingrayf033c_camera.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/sensors/stingrayf033c_camera.urdf.xacro" />
 
   <property name="stereo_dx" value="0.00" />
   <property name="stereo_dy" value="-0.073" /> <!-- stereo baseline according to stereo_link which has X pointing forward, Y leftwards and Z upwards (required by Gazebo for a camera sensor) --> 

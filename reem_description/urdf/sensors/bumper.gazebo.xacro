@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!--
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -18,14 +18,14 @@
         <pose>0 0 0 0 0 0</pose>
         <update_rate>${update_rate}</update_rate>
         <visualize>false</visualize>
-        <plugin filename="libreem_bumper_gazebo.so" name="gazebo_reem_ros_bumper">
+        <plugin filename="libgazebo_ros_bumper.so" name="gazebo_reem_ros_bumper">
           <alwaysOn>true</alwaysOn>
           <updateRate>${update_rate}</updateRate>
-          <topicName>${ros_topic}</topicName>
+          <bumperTopicName>${ros_topic}</bumperTopicName>
           <frameName>${name}_link</frameName>
         </plugin>
       </sensor>
-    </gazebo> 
+    </gazebo>
   </xacro:macro>
 
 </robot>

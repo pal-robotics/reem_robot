@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2011-2013, PAL Robotics, S.L.
+  Copyright (c) 2011-2014, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -11,8 +11,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!--File includes-->
-  <include filename="$(find reem_description)/urdf/deg_to_rad.xacro" />
-  <include filename="$(find reem_description)/urdf/arm/wrist.transmission.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/deg_to_rad.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/arm/wrist.transmission.xacro" />
 
   <!--Constant parameters-->
   <xacro:property name="wrist_friction"     value="1.0" />
