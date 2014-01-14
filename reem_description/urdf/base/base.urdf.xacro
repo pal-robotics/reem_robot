@@ -142,6 +142,7 @@
      <kd>10000.0</kd>
      <mu1>1.0</mu1>
      <mu2>1.0</mu2>
+     <minDepth>0.00</minDepth>
    </gazebo>
 
     <joint name="caster_${side}_1_joint" type="continuous">
