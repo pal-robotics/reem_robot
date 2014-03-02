@@ -8,6 +8,6 @@
   <!-- Robot model -->
   <include file="$(find reem_description)/robots/upload_reem.launch"/>
 
-  <!-- bring up robot -->
+  <!-- Bring up robot -->
   <include file="$(find reem_bringup)/launch/reem_bringup.launch"/>
 </launch>

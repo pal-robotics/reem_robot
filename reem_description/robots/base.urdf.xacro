@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-  Copyright (c) 2013, PAL Robotics, S.L.
+  Copyright (c) 2012, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -14,20 +14,17 @@
         xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
         name="reem" >
 
-  <!-- Stock REEM robot -->
-  <xacro:include filename="$(find reem_description)/robots/reem_full.urdf.xacro" />
+  <!-- The following included files set up definitions of parts of the robot body -->
 
-  <!-- PAL printed xtion mount link on top of the head -->
-  <joint name="head_mount_xtion_joint" type="fixed">
-    <origin xyz=" 0.085707 -0.255851  0.0920873 " rpy="1.49965 0.0108274 0.458756"/>
-    <parent link="head_2_link"/>
-    <child link="head_mount_xtion_link"/>
-  </joint>
+  <!-- Base -->
+  <xacro:include filename="$(find reem_description)/urdf/base/base.urdf.xacro" />
 
-  <link name="head_mount_xtion_link">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-  </link>
+  <!-- Generic simulator_gazebo plugins -->
+<!--   <xacro:include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" /> -->
+  <!-- Materials for visualization -->
+  <xacro:include filename="$(find reem_description)/urdf/materials.urdf.xacro" />
+
+  <!-- Base -->
+  <xacro:reem_base  name="base"/>
 
 </robot>
-
-

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
+
 <!--
-  Copyright (c) 2011-2014, PAL Robotics, S.L.
+  Copyright (c) 2011, PAL Robotics, S.L.
   All rights reserved.
 
   This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
@@ -11,7 +12,6 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:macro name="range_reem_gazebo" params="name ros_topic update_rate maxRange minRange fov radiation" >
-       
     <gazebo reference="${name}_link">
       <sensor type="ray" name="${name}">
         <pose>0 0 0 0 0 0</pose>
