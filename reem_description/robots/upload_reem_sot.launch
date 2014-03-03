@@ -1,0 +1,4 @@
+<launch>
+	<arg name="robot" default="true" />
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find reem_description)/robots/reem_collision_sot.urdf.xacro'" />
+</launch>
