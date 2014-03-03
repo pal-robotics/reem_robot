@@ -10,7 +10,6 @@
 -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <!--File includes-->
   <xacro:include filename="$(find reem_description)/urdf/deg_to_rad.xacro" />
   <xacro:include filename="$(find reem_description)/urdf/arm/wrist.urdf.xacro" />
   <xacro:include filename="$(find reem_description)/urdf/arm/arm.transmission.xacro" />
@@ -193,16 +192,16 @@
    </gazebo>
 
    <gazebo reference="${name}_${side}_1_joint">
-      <cfmDamping>1</cfmDamping>
+      <implicitSpringDamper>1</implicitSpringDamper>
    </gazebo>
    <gazebo reference="${name}_${side}_2_joint">
-      <cfmDamping>1</cfmDamping>
+      <implicitSpringDamper>1</implicitSpringDamper>
    </gazebo>
    <gazebo reference="${name}_${side}_3_joint">
-      <cfmDamping>1</cfmDamping>
+      <implicitSpringDamper>1</implicitSpringDamper>
    </gazebo>
    <gazebo reference="${name}_${side}_4_joint">
-      <cfmDamping>1</cfmDamping>
+      <implicitSpringDamper>1</implicitSpringDamper>
    </gazebo>
 
 
@@ -245,7 +244,7 @@
     <xacro:reem_shoulder_transmission name="${name}" side="${side}" number="1"
                                       act_reduction_1="1.0" act_reduction_2="-1.0"
                                       jnt_reduction_1="1.0" jnt_reduction_2="-1.0"/>
-    
+
     <xacro:reem_arm_simple_transmission name="${name}" side="${side}" number="2" reduction="1.0" />
     <xacro:reem_arm_simple_transmission name="${name}" side="${side}" number="3" reduction="1.0" />
     <xacro:reem_arm_simple_transmission name="${name}" side="${side}" number="4" reduction="1.0" />
