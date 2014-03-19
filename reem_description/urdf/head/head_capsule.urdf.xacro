@@ -41,9 +41,9 @@
         <material name="DarkGrey" />
       </visual>
       <collision>
-        <origin xyz="0.0333 0 0.1" rpy="0 0 0" />
+        <origin xyz="0.02 0 0.1" rpy="0 0 0" />
         <geometry>
-	 <cylinder length="0.2" radius="0.15" /> 
+	 <cylinder length="0.03" radius="0.16" /> 
           <!--<mesh filename="package://reem_description/meshes/head/head_1_collision.stl"/>-->
         </geometry>
       </collision>

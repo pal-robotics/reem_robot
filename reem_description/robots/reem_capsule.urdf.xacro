@@ -17,7 +17,7 @@
   <!-- The following included files set up definitions of parts of the robot body -->
 
   <!-- Base -->
-  <xacro:include filename="$(find reem_description)/urdf/base/base.urdf.xacro" />
+  <xacro:include filename="$(find reem_description)/urdf/base/base_capsule.urdf.xacro" />
   <!-- Torso -->
   <xacro:include filename="$(find reem_description)/urdf/torso/torso_capsule.urdf.xacro" />
   <!-- Head -->

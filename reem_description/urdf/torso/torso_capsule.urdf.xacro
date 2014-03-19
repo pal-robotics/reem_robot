@@ -83,7 +83,7 @@
       <collision>
 	<origin xyz="0 -0.16 0" rpy="0 0 0" />
         <geometry>
-	<cylinder length="0.3" radius="0.16" />
+	<cylinder length="0.1" radius="0.16" />
           <!--<mesh filename="package://reem_description/meshes/torso/torso_2_collision.stl" />-->
         </geometry>
       </collision>

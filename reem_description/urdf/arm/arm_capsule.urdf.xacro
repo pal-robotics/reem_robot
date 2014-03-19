@@ -81,9 +81,10 @@
         <material name="DarkGrey" />
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0.03 -0.035 0" rpy="${M_PI/2} 0 0" />
         <geometry>
-          <mesh filename="package://reem_description/meshes/arm/arm_2_collision.stl" scale="1 1 ${-1*reflect}"/>
+		<cylinder length="0.02" radius="0.04" />
+          <!--<mesh filename="package://reem_description/meshes/arm/arm_2_collision.stl" scale="1 1 ${-1*reflect}"/>-->
         </geometry>
       </collision>
     </link>
@@ -118,10 +119,10 @@
         <material name="DarkGrey" />
       </visual>
       <collision>
-        <origin xyz="0 0 ${reflect *0.08}" rpy="0 0 0" />
+        <origin xyz="0 0 ${reflect *0.04}" rpy="0 0 0" />
         <geometry>
           <!--<mesh filename="package://reem_description/meshes/arm/arm_3_collision.stl" scale="1 1 ${-1*reflect}"/>-->
-	  <cylinder length="0.18" radius="0.05" />
+	  <cylinder length="0.09" radius="0.05" />
         </geometry>
       </collision>
     </link>
