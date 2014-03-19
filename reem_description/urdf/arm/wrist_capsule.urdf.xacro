@@ -125,7 +125,7 @@
         <!--<origin xyz="0 0 ${0.046 * 0.75 * reflect}" rpy="0 0 0" />-->
         <geometry>
         <!-- modified values -->
-        <cylinder radius="0.13" length="0.04"/>
+        <cylinder radius="0.10" length="0.04"/>
           <!-- original values -->
           <!--<cylinder radius="0.02" length="0.023"/>-->
         </geometry>
