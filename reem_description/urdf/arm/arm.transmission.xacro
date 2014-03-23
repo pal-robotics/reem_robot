@@ -17,10 +17,12 @@
       <actuator name="torso_2_motor">
         <role>actuator1</role>
         <mechanicalReduction>${act_reduction_1}</mechanicalReduction>
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <actuator name="${name}_${side}_${number}_motor">
         <role>actuator2</role>
         <mechanicalReduction>${act_reduction_2}</mechanicalReduction>
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="torso_2_joint">
         <role>joint1</role>
@@ -42,6 +44,7 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${name}_${side}_${number}_motor" >
         <mechanicalReduction>${reduction}</mechanicalReduction>
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="${name}_${side}_${number}_joint">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>

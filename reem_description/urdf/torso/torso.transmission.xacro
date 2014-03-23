@@ -14,7 +14,8 @@
     <transmission name="${name}_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${name}_motor" >
-        <mechanicalReduction>${reduction}</mechanicalReduction>
+        <mechanicalReduction>${reduction}</mechanicalReduction>'
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="${name}_joint" >
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>

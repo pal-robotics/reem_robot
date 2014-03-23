@@ -16,6 +16,7 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${name}_motor" >
         <mechanicalReduction>${reduction}</mechanicalReduction>
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="${name}_joint" >
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -31,6 +32,7 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${finger_name}_motor" >
         <mechanicalReduction>${actuator_reduction}</mechanicalReduction>
+	<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </actuator>
       <joint name="${finger_name}_joint" >
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
@@ -42,6 +44,7 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${finger_name}_1_motor" >
         <mechanicalReduction>1.0</mechanicalReduction>
+	<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
       </actuator>
       <joint name="${finger_name}_1_joint" >
         <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
@@ -52,6 +55,7 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${finger_name}_2_motor" >
         <mechanicalReduction>1.0</mechanicalReduction>
+	<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
       </actuator>
       <joint name="${finger_name}_2_joint" >
         <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
@@ -62,6 +66,7 @@
       <type>transmission_interface/SimpleTransmission</type>
       <actuator name="${finger_name}_3_motor" >
         <mechanicalReduction>1.0</mechanicalReduction>
+	<hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
       </actuator>
       <joint name="${finger_name}_3_joint" >
         <hardwareInterface>hardware_interface/JointStateInterface</hardwareInterface>
