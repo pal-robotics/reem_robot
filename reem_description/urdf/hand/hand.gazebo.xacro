@@ -16,8 +16,8 @@
           <!--<grasp_check attach_steps="20" detach_steps="40" min_contact_count="2" />-->
           <grasp_check>
             <attach_steps>20</attach_steps>
-            <detach_steps>20</detach_steps>
-            <min_contact_count>20</min_contact_count>
+            <detach_steps>40</detach_steps>
+            <min_contact_count>2</min_contact_count>
           </grasp_check>
           <gripper_link>hand_${side}_middle_1_link</gripper_link>
           <gripper_link>hand_${side}_index_1_link</gripper_link>
