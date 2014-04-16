@@ -17,5 +17,6 @@
   <run_depend>joy_teleop</run_depend>
   <run_depend>joy</run_depend>
   <run_depend>play_motion</run_depend>
+  <run_depend>reem_moveit_config</run_depend>
 
 </package>

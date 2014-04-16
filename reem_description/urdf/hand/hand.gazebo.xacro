@@ -13,11 +13,10 @@
     <xacro:macro name="hand_grasping_hack" params="side">
       <gazebo>
         <gripper name="${side}_grasp_hack">
-          <!--<grasp_check attach_steps="20" detach_steps="40" min_contact_count="2" />-->
           <grasp_check>
-            <attach_steps>20</attach_steps>
-            <detach_steps>20</detach_steps>
-            <min_contact_count>20</min_contact_count>
+            <attach_steps>1</attach_steps> <!-- Gripper.cc:49 this->updateRate = common::Time(0, common::Time::SecToNano(0.75)); that's a step-->
+            <detach_steps>2</detach_steps>
+            <min_contact_count>2</min_contact_count> <!-- Contacts between gripper_link and the object while touching palm_link too, this gets to hundreds very easily -->
           </grasp_check>
           <gripper_link>hand_${side}_middle_1_link</gripper_link>
           <gripper_link>hand_${side}_index_1_link</gripper_link>
@@ -25,7 +24,7 @@
           <gripper_link>hand_${side}_index_2_link</gripper_link>
           <gripper_link>hand_${side}_middle_3_link</gripper_link>
           <gripper_link>hand_${side}_index_3_link</gripper_link>
-          <palm_link>hand_${side}_thumb_link</palm_link>
+          <palm_link>hand_${side}_thumb_link</palm_link> <!-- Contacts in Gazebo stop appearing with this palm_link when the plugin is active (i.e. the blue balls when activating contacts)-->
         </gripper>
       </gazebo>
     </xacro:macro>
@@ -83,7 +82,7 @@
     </gazebo>
 
     <gazebo>
-      <plugin filename="libgazebo_pal_hand.so" name="gazebo_pal_right_hand_index">
+      <plugin filename="libgazebo_pal_hand.so" name="gazebo_pal_hand_finger">
         <actuatedJoint>${finger_name}_joint</actuatedJoint>
         <fingerJoint1>${finger_name}_1_joint</fingerJoint1>
         <fingerJoint2>${finger_name}_2_joint</fingerJoint2>
