@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!--
+
+  Copyright (c) 2012-2014, PAL Robotics, S.L.
+  All rights reserved.
+
+  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.
+  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to
+  Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+-->
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro"
+        xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+        xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+        name="reem" >
+
+  <!-- The following included files set up definitions of parts of the robot body -->
+
+  <!-- Torso -->
+  <xacro:include filename="$(find reem_description)/urdf/torso/torso.urdf.xacro" />
+
+  <!-- Head -->
+  <xacro:include filename="$(find reem_description)/urdf/head/head.urdf.xacro" />
+
+  <!-- Arm -->
+  <xacro:include filename="$(find reem_description)/urdf/arm/arm.urdf.xacro" />
+
+  <!-- Hand -->
+<!--  <xacro:include filename="$(find reem_description)/urdf/hand/hand.urdf.xacro" />-->
+
+  <!-- Generic simulator_gazebo plugins -->
+<xacro:include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
+  <!-- Materials for visualization -->
+<xacro:include filename="$(find reem_description)/urdf/materials.urdf.xacro" />
+    <!--************************-->
+    <!--        BASE            -->
+    <!--************************-->
+
+    <link name="base_link">
+      <inertial>
+        <origin xyz="-0.14527 -0.00003 0.24721" rpy="0 0 0" /> <!-- assuming d=0.6, w=0.5, h=0.4 -->
+        <mass value="63.58850" />
+        <inertia ixx="3.42"  ixy="0"  ixz="0" iyy="4.33" iyz="0" izz="5.08" /> <!-- assuming d=0.6, w=0.5, h=0.4 -->
+<!--         <origin xyz="-0.15006 -0.00031 0.24965" rpy="0 0 0" /> -->
+<!--         <mass value="64.063" /> -->
+        <!-- NOTE: Assuming box with d=0.6, w=0.5, h=0.4 -->
+<!--         <inertia ixx="3.42"  ixy="0"  ixz="0" iyy="4.33" iyz="0" izz="5.08" /> -->
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reem_description/meshes/base/base.dae" />
+        </geometry>
+        <material name="LightGrey" />
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reem_description/meshes/base/base_collision.stl" />
+        </geometry>
+        <material name="LightGrey" />
+      </collision>
+    </link>
+    
+  <!-- Body parts -->
+  <xacro:reem_torso name="torso" parent="base_link"/>
+  <xacro:reem_head  name="head"  parent="torso_2_link"/>
+  <!-- The reflect parameter takes the value 1 or -1 to respectively distinguish right from left side in expressions -->
+  <xacro:reem_arm name="arm" parent="torso_2_link" side="right" reflect="1.0"  />
+  <xacro:reem_arm name="arm" parent="torso_2_link" side="left"  reflect="-1.0" />
+
+    <!--************************-->
+    <!--        CAMERA          -->
+    <!--************************-->
+    <link name="camera_link">
+      <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+        <mass value="0.0" />
+         <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      </inertial>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+      <parent link="head_2_link"/>
+      <child link="camera_link"/>
+      <origin xyz="0 0 0" rpy="${180.0 * deg_to_rad} ${-90.0 * deg_to_rad} ${0.0 * deg_to_rad}" />
+    </joint>
+</robot>
+
+
