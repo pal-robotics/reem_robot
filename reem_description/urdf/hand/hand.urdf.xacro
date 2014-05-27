@@ -268,6 +268,25 @@
       </inertial>
     </link>
 
+    <!-- SOT Grasping frame -->
+    <!-- grasp planner will approach along x-axis -->
+    <joint name="${name}_${side}_sot_grasping_frame_joint" type="fixed">
+      <parent link="${name}_${side}_palm_link" />
+      <child link="${name}_${side}_sot_grasping_frame" />
+      <origin xyz="0.055 ${reflect * 0.054} 0.018" rpy="-0.55 1.54 0" />
+    </joint>
+    <link name="${name}_${side}_sot_grasping_frame">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="0.01" /> <!-- matrix below must not be zero, or Gazebo won't load -->
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0"
+                 iyy="0.1" iyz="0.0"
+                 izz="0.1" />
+      </inertial>
+    </link>
+
+
+
     <xacro:hand_thumb_transmission name="${name}_${side}_thumb" reduction="1" />
 
     <!-- Index finger -->

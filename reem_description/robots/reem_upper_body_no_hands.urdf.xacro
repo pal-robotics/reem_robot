@@ -26,7 +26,7 @@
   <xacro:include filename="$(find reem_description)/urdf/arm/arm.urdf.xacro" />
 
   <!-- Hand -->
-<!--  <xacro:include filename="$(find reem_description)/urdf/hand/hand.urdf.xacro" />-->
+  <xacro:include filename="$(find reem_description)/urdf/hand/sot_grasping_frame.urdf.xacro" />
 
   <!-- Generic simulator_gazebo plugins -->
 <xacro:include filename="$(find reem_description)/gazebo/gazebo.urdf.xacro" />
@@ -68,6 +68,11 @@
   <!-- The reflect parameter takes the value 1 or -1 to respectively distinguish right from left side in expressions -->
   <xacro:reem_arm name="arm" parent="torso_2_link" side="right" reflect="1.0"  />
   <xacro:reem_arm name="arm" parent="torso_2_link" side="left"  reflect="-1.0" />
+
+  <!-- The reflect parameter takes the value 1 or -1 to respectively distinguish right from left side in expressions -->
+  <xacro:reem_hand name="hand" parent="arm_right_tool_link" side="right" reflect="1.0"  />
+  <xacro:reem_hand name="hand" parent="arm_left_tool_link" side="left"  reflect="-1.0" />
+
 
     <!--************************-->
     <!--        CAMERA          -->
