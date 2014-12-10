@@ -30,8 +30,8 @@
         <origin xyz="0.01741 0.00466 -0.00434" rpy="0 0 0" />
         <mass value="0.98547" />
         <!-- NOTE: Assuming cylinder with r=0.06, h=0.08 -->
-<!--         <inertia ixx="0.0014125"  ixy="0"  ixz="0" iyy="0.0014125" iyz="0" izz="0.0017738" /> -->
-        <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+         <inertia ixx="0.0014125"  ixy="0"  ixz="0" iyy="0.0014125" iyz="0" izz="0.0017738" />
+
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -86,9 +86,7 @@
         <origin xyz="-0.04431 -0.13008 0.00011" rpy="0 0 0" />
         <mass value="1.20862" />
         <!-- NOTE: Assuming box with d=0.28433, w=0.20302, h=0.26741 -->
-<!--         <inertia ixx="0.011353"  ixy="0"  ixz="0" iyy="0.012294" iyz="0" izz="0.015345" /> -->
-        <!--NOTE: Low (0.1 or lower) diagonal inertia values make Gazebo 1.0.2 simulation unstable when head sensors are added.-->
-        <inertia ixx="0.25"  ixy="0"  ixz="0" iyy="0.25" iyz="0" izz="0.25" />
+         <inertia ixx="0.011353"  ixy="0"  ixz="0" iyy="0.012294" iyz="0" izz="0.015345" />
       </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
