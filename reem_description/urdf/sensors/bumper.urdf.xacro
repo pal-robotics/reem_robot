@@ -10,7 +10,8 @@
 -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find reem_description)/urdf/sensors/bumper.gazebo.xacro" />
+    <!-- Bumper sensors are giving errors in gazebo 2.2.3, disabling them temporarily -->
+    <!-- <xacro:include filename="$(find reem_description)/urdf/sensors/bumper.gazebo.xacro" /> -->
 
   <xacro:macro name="bumper_reem" params="name parent ros_topic update_rate *origin">
      <joint name="${name}_joint" type="fixed">
